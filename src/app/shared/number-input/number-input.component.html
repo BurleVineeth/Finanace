@@ -1,0 +1,11 @@
+<div class="number-input-container">
+  <label [attr.for]="id + 'n'" class="text-capitalize label">{{
+    id | formatKey
+  }}</label>
+  <input type="number" class="input" [id]="id + 'n'" [formControl]="control" />
+  <p class="error text-capitalize overflow-ellipsis">
+    <span *ngIf="control.touched && control.invalid">
+      {{ getErrorMessage() | formatKey }}
+    </span>
+  </p>
+</div>

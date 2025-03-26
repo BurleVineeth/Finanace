@@ -1,0 +1,49 @@
+@use "helper";
+
+.nav-container {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  .content {
+    width: 60%;
+    background-color: helper.$basic-white;
+    box-shadow: 3px 0 10px helper.$box-shadow;
+    .app-title {
+      text-align: center;
+      padding: 30px 0;
+      background-color: helper.$highlight-color;
+      color: helper.$basic-white;
+      font-size: helper.$title-font-size;
+      letter-spacing: 1px;
+      .title-content {
+        cursor: pointer;
+        .highlight {
+          font-size: helper.$highlight-font-size;
+        }
+      }
+    }
+    .app-links {
+      padding: 20px;
+      .link {
+        &:hover {
+          color: helper.$highlight-color;
+          border-color: helper.$highlight-color;
+          background-color: helper.$background-highlight;
+        }
+        border-bottom: 2px solid helper.$backdrop;
+        border-bottom-left-radius: 8px;
+        padding: 5px 0 5px 20px;
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+      }
+    }
+  }
+  .blank-space {
+    width: 40%;
+    cursor: pointer;
+  }
+}

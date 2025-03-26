@@ -1,0 +1,49 @@
+@use "font-sizes";
+@use "colors";
+@use "break-points";
+
+@mixin input-field {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 0 8px;
+  display: inline-block;
+  width: 50%;
+  &:focus-within {
+    .label {
+      color: colors.$highlight-color !important;
+    }
+  }
+  .label {
+    display: block;
+    padding-left: 20px;
+    color: black;
+  }
+
+  .error {
+    color: colors.$error-color;
+    padding-left: 20px;
+    margin: 4px 0 0 0;
+    font-size: font-sizes.$error-font-size;
+    height: 18px;
+  }
+
+  .input {
+    border: none;
+    font-size: font-sizes.$basic-font-size;
+    padding-top: 10px;
+    outline: none;
+    width: 100%;
+    padding-left: 20px;
+    border-bottom-left-radius: 8px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid;
+    &:focus {
+      border-bottom: 2px solid colors.$highlight-color !important;
+    }
+  }
+
+  @media (max-width: break-points.$mobile) {
+    width: 100%;
+  }
+}

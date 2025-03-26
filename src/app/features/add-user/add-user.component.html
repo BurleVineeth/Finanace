@@ -1,0 +1,33 @@
+<div class="add-user-container">
+  <div class="form-container">
+    <form [formGroup]="userForm" class="form">
+      <app-text-input
+        id="name"
+        [control]="getFormControl('name')"
+      ></app-text-input>
+      <ng-container formGroupName="address">
+        <app-text-input
+          id="address.village"
+          [control]="getNestedFormControl('address', 'village')"
+        ></app-text-input>
+        <app-text-input
+          id="address.town"
+          [control]="getNestedFormControl('address', 'town')"
+        ></app-text-input>
+      </ng-container>
+
+      <app-number-input
+        id="phoneNumber"
+        [control]="getFormControl('phoneNumber')"
+      ></app-number-input>
+      <app-number-input
+        id="amount"
+        [control]="getFormControl('amount')"
+      ></app-number-input>
+    </form>
+  </div>
+  <div class="action-container">
+    <app-button name="clear" (onClick)="clearForm()"></app-button>
+    <app-button name="save" class="primary"></app-button>
+  </div>
+</div>

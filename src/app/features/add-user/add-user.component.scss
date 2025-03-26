@@ -1,0 +1,28 @@
+@use "helper";
+
+.add-user-container {
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  .form-container {
+    border: 1px solid helper.$backdrop;
+    padding: 20px 10px;
+    border-radius: 8px;
+    flex: 1;
+    overflow: auto;
+  }
+  .action-container {
+    padding: 20px 0px;
+    text-align: right;
+
+    @media (max-width: helper.$mobile) {
+      display: flex;
+      gap: 10px;
+      app-button {
+        width: 50%;
+      }
+    }
+  }
+}

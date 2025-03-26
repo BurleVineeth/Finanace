@@ -1,0 +1,34 @@
+<app-side-nav
+  [headerLinks]="headerLinks"
+  [showSideNav]="showSideNav"
+  (showSideNavChange)="closeSideNav($event)"
+></app-side-nav>
+<header>
+  <div class="header-container">
+    <div class="side-nav show-nav">
+      <div class="menu" (click)="openSideNav()">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Menu"
+          fontIcon="menu"
+        ></mat-icon>
+      </div>
+    </div>
+    <div class="app-logo">
+      <div class="app-title">
+        <span class="app-title-content" routerLink="">
+          <span class="highlight">Dr</span>agon
+        </span>
+      </div>
+    </div>
+    <div class="links-container hide-header">
+      <div
+        *ngFor="let headerLink of headerLinks; index as i; trackBy: identify"
+        class="header-link"
+        [routerLink]="headerLink.link"
+      >
+        {{ headerLink.name }}
+      </div>
+    </div>
+  </div>
+</header>

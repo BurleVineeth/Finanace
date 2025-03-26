@@ -1,0 +1,5 @@
+@use "helper";
+
+.text-input-container {
+  @include helper.input-field;
+}

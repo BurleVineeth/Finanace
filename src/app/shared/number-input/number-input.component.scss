@@ -1,0 +1,5 @@
+@use "helper";
+
+.number-input-container {
+  @include helper.input-field;
+}
