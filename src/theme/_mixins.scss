@@ -1,13 +1,12 @@
 @use "font-sizes";
 @use "colors";
-@use "break-points";
 
 @mixin input-field {
   box-sizing: border-box;
   margin-bottom: 20px;
   padding: 0 8px;
   display: inline-block;
-  width: 50%;
+  width: 100%;
   &:focus-within {
     .label {
       color: colors.$highlight-color !important;
@@ -41,9 +40,5 @@
     &:focus {
       border-bottom: 2px solid colors.$highlight-color !important;
     }
-  }
-
-  @media (max-width: break-points.$mobile) {
-    width: 100%;
   }
 }

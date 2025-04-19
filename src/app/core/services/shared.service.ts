@@ -7,10 +7,6 @@ import { FormControl } from '@angular/forms';
 export class SharedService {
   constructor() {}
 
-  public identify<T extends { id: string }>(index: number, item: T) {
-    return `${item.id} - ${index}`;
-  }
-
   public getErrorMessage(control: FormControl, field: string): string {
     if (control.errors) {
       if (control.hasError('required')) {

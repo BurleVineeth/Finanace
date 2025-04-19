@@ -28,6 +28,7 @@ export class AddUserComponent {
   public userForm!: FormGroup<UserForm>;
 
   private readonly formBuilder = inject(FormBuilder);
+
   ngOnInit() {
     this.initializeForm();
   }

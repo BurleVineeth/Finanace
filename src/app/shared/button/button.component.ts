@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ButtonComponent {
   @Input({ required: true }) name!: string;
-  @Input() class: string = '';
+  @Input() class: 'primary' | 'basic' = 'basic';
 
   @Output() onClick = new EventEmitter<boolean>();
 
