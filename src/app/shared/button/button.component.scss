@@ -1,9 +1,16 @@
 @use "helper";
 
+@mixin btnHighlighter($bgColor, $color) {
+  background-color: $bgColor;
+  color: $color;
+}
+
 .btn {
   &.primary {
-    background-color: helper.$highlight-color;
-    color: helper.$basic-white;
+    @include btnHighlighter(helper.$highlight-color, helper.$basic-white);
+  }
+  &.basic {
+    @include btnHighlighter(helper.$basic-clear, helper.$black);
   }
 
   border: 1px solid helper.$backdrop;

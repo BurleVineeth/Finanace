@@ -12,6 +12,15 @@
     border-radius: 8px;
     flex: 1;
     overflow: auto;
+
+    .form {
+      display: grid;
+      grid-template-columns: auto auto;
+
+      @media (max-width: helper.$mobile) {
+        grid-template-columns: auto;
+      }
+    }
   }
   .action-container {
     padding: 20px 0px;

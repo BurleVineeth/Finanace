@@ -7,11 +7,7 @@
   <div class="header-container">
     <div class="side-nav show-nav">
       <div class="menu" (click)="openSideNav()">
-        <mat-icon
-          aria-hidden="false"
-          aria-label="Menu"
-          fontIcon="menu"
-        ></mat-icon>
+        <fa-icon [icon]="['fas', 'bars']"></fa-icon>
       </div>
     </div>
     <div class="app-logo">
@@ -22,13 +18,15 @@
       </div>
     </div>
     <div class="links-container hide-header">
-      <div
-        *ngFor="let headerLink of headerLinks; index as i; trackBy: identify"
-        class="header-link"
-        [routerLink]="headerLink.link"
-      >
-        {{ headerLink.name }}
-      </div>
+      @for (
+        headerLink of headerLinks;
+        track headerLink.id;
+        let index = $index
+      ) {
+        <div class="header-link" [routerLink]="headerLink.link">
+          {{ headerLink.name }}
+        </div>
+      }
     </div>
   </div>
 </header>

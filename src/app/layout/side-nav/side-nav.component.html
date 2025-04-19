@@ -11,13 +11,11 @@
       </div>
     </div>
     <div class="app-links">
-      <div
-        *ngFor="let headerLink of headerLinks; trackBy: identify"
-        class="link"
-        (click)="navigate(headerLink)"
-      >
-        {{ headerLink.name }}
-      </div>
+      @for (headerLink of headerLinks; track headerLink.id) {
+        <div class="link" (click)="navigate(headerLink)">
+          {{ headerLink.name }}
+        </div>
+      }
     </div>
   </div>
   <div class="blank-space" (click)="closeSideNav()"></div>
