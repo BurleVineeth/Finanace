@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input, Input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { FormatKeyPipe } from '../../core/pipes/format-key.pipe';
 import { CommonModule } from '@angular/common';
@@ -11,12 +11,12 @@ import { SharedService } from '../../core/services/shared.service';
   styleUrl: './number-input.component.scss',
 })
 export class NumberInputComponent {
-  @Input({ required: true }) id!: string;
+  public id = input.required<string>();
   @Input({ required: true }) control!: FormControl;
 
   private readonly sharedSvc = inject(SharedService);
 
   public getErrorMessage(): string {
-    return this.sharedSvc.getErrorMessage(this.control, this.id);
+    return this.sharedSvc.getErrorMessage(this.control, this.id());
   }
 }

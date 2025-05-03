@@ -1,8 +1,8 @@
 <div class="text-input-container">
-  <label [attr.for]="id + 't'" class="text-capitalize label">{{
-    id | formatKey
+  <label [attr.for]="id() + 't'" class="text-capitalize label">{{
+    id() | formatKey
   }}</label>
-  <input type="text" class="input" [id]="id + 't'" [formControl]="control" />
+  <input type="text" class="input" [id]="id() + 't'" [formControl]="control" />
   <p class="error text-capitalize overflow-ellipsis">
     @if (control.touched && control.invalid) {
       {{ getErrorMessage() | formatKey }}
