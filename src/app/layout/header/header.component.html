@@ -13,7 +13,7 @@
     <div class="app-logo">
       <div class="app-title">
         <span class="app-title-content" routerLink="">
-          <span class="highlight">Dr</span>agon
+          <span class="highlight">M</span>anagement
         </span>
       </div>
     </div>
@@ -23,7 +23,11 @@
         track headerLink.id;
         let index = $index
       ) {
-        <div class="header-link" [routerLink]="headerLink.link">
+        <div
+          class="header-link"
+          [routerLink]="headerLink.link"
+          [ngClass]="{ 'active-border': currentUrlPath === headerLink.link }"
+        >
           {{ headerLink.name }}
         </div>
       }

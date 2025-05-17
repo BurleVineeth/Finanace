@@ -3,3 +3,4 @@ export * from './routes';
 export * from './animations';
 export * from './header-links';
 export * from './regex-patterns';
+export * from './tasks';

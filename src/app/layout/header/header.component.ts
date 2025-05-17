@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { HeaderLink } from '../../core/models';
 import { HeaderLinks } from '../../core/constants';
 import { SideNavComponent } from '../side-nav/side-nav.component';
@@ -19,9 +19,18 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent {
   public showSideNav: boolean = false;
   public headerLinks: HeaderLink[] = HeaderLinks;
+  public currentUrlPath: string = '';
 
-  constructor(library: FaIconLibrary) {
+  constructor(
+    library: FaIconLibrary,
+    private router: Router,
+  ) {
     library.addIcons(faBars);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentUrlPath = event.urlAfterRedirects.split('/')[1] ?? 0;
+      }
+    });
   }
 
   public openSideNav() {

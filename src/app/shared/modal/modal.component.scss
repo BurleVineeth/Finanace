@@ -1,0 +1,37 @@
+@use "helper";
+
+.modal-container {
+  cursor: pointer;
+  background: helper.$modal-backdrop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  @include helper.full-position-absolute();
+  @media (max-width: helper.$mobile) {
+    padding: 0;
+    background: transparent;
+  }
+
+  .modal-content {
+    cursor: default;
+    background: helper.$task-background;
+    max-height: 60%;
+    height: 100%;
+    max-width: 800px;
+    border-radius: 16px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow:
+      2px 2px 10px rgb(71 71 71 / 30%),
+      -2px -2px 10px rgb(73 73 73 / 30%);
+
+    @media (max-width: helper.$mobile) {
+      height: 100%;
+      max-height: 100%;
+      width: 100%;
+      padding: 20px 10px;
+      border-radius: 0;
+    }
+  }
+}

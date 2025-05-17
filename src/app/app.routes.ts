@@ -1,24 +1,32 @@
 import { Routes } from '@angular/router';
+import { RoutePaths } from './core/constants';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'home',
+    path: '',
     loadComponent: () =>
-      import('./dashboard/home/home.component').then((c) => c.HomeComponent),
+      import('./home/home.component').then((c) => c.HomeComponent),
     children: [
+      { path: '', redirectTo: RoutePaths.Home, pathMatch: 'full' },
       {
-        path: '',
+        path: RoutePaths.Home,
         loadComponent: () =>
           import('./features/dashboard/dashboard.component').then(
             (m) => m.DashboardComponent,
           ),
       },
       {
-        path: 'add-user',
+        path: RoutePaths.AddUser,
         loadComponent: () =>
           import('./features/add-user/add-user.component').then(
             (c) => c.AddUserComponent,
+          ),
+      },
+      {
+        path: RoutePaths.Tasks,
+        loadComponent: () =>
+          import('./features/tasks/tasks/tasks.component').then(
+            (c) => c.TasksComponent,
           ),
       },
     ],

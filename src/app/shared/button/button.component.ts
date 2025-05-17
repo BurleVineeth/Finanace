@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  @Input({ required: true }) name!: string;
-  @Input() class: 'primary' | 'basic' = 'basic';
+  public name = input.required<string>();
+  public class = input<'primary' | 'basic'>('basic');
 
   @Output() onClick = new EventEmitter<boolean>();
 

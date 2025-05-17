@@ -1,0 +1,26 @@
+@if (canShowTaskForm) {
+  <app-modal (modalDismiss)="closeTaskForm()">
+    <app-add-task></app-add-task>
+  </app-modal>
+}
+
+<div class="add-task-container text-right padding-bottom">
+  <app-button
+    name="Add Task"
+    class="primary"
+    (onClick)="addTask()"
+  ></app-button>
+</div>
+@for (task of tasks; track $index) {
+  <div class="task-card">
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+    <p><strong>Due:</strong> {{ task.dueDate | date }}</p>
+    <p>
+      Status:
+      <span [ngStyle]="{ color: task.completed ? 'green' : 'red' }">
+        {{ task.completed ? "Completed" : "Pending" }}
+      </span>
+    </p>
+  </div>
+}

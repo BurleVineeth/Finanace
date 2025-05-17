@@ -1,0 +1,24 @@
+<div class="add-task-container">
+  <div class="form-header header text-center">Add Task</div>
+  <div class="form-container">
+    <form [formGroup]="taskForm" class="form">
+      <app-text-input
+        id="title"
+        [control]="getFormControl('title')"
+      ></app-text-input>
+      <app-text-input
+        id="description"
+        [control]="getFormControl('description')"
+      ></app-text-input>
+
+      <app-number-input
+        id="dueDate"
+        [control]="getFormControl('dueDate')"
+      ></app-number-input>
+    </form>
+  </div>
+  <div class="action-container">
+    <app-button name="clear" (onClick)="clearForm()"></app-button>
+    <app-button name="save" class="primary"></app-button>
+  </div>
+</div>

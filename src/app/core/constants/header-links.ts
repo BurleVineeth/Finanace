@@ -1,17 +1,19 @@
+import { RoutePaths } from './routes';
+
 export const HeaderLinks = [
   {
-    name: 'Add User',
-    link: 'add-user',
-    id: 'addUser',
+    name: 'Home',
+    link: RoutePaths.Home,
+    id: 'home',
   },
   {
-    name: 'Link 2',
-    link: 'link',
-    id: 'link2',
+    name: 'Profile',
+    link: RoutePaths.AddUser,
+    id: 'profile',
   },
   {
-    name: 'Link 3',
-    link: 'link',
-    id: 'link3',
+    name: 'Tasks',
+    link: RoutePaths.Tasks,
+    id: 'tasks',
   },
 ];

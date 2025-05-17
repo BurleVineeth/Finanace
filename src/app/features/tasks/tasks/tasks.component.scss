@@ -1,0 +1,5 @@
+@use "helper";
+
+.task-card {
+  @include helper.card(helper.$task-background);
+}

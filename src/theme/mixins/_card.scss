@@ -1,0 +1,9 @@
+@use "colors";
+
+@mixin card($background) {
+  border: 1px solid colors.$backdrop;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: $background;
+}
